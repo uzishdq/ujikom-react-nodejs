@@ -43,23 +43,28 @@ const TableActionPenerbit = () => {
         </tr>
       </thead>
       <tbody>
-        {penerbit.map((penerbit) => (
-          <tr
-            className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-            key={penerbit.ID_PENERBIT}>
-            <td className="px-6 py-4 ">{penerbit.ID_PENERBIT}</td>
-            <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              {penerbit.NAMA_PENERBIT}
-            </td>
-            <td className="px-6 py-4">{penerbit.ALAMAT_PENERBIT}</td>
-            <td className="px-6 py-4">{penerbit.KOTA_PENERBIT}</td>
-            <td className="px-6 py-4">{penerbit.TLP}</td>
-            <td className="px-6 py-4">
-              <ButtonEdit idPenerbit={penerbit.ID_PENERBIT} />
-              <ButtonDelete idPenerbit={penerbit.ID_PENERBIT} />
-            </td>
-          </tr>
-        ))}
+        {penerbit.length > 0 && (
+          <>
+            {penerbit.map((penerbit) => (
+              <tr
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                key={penerbit.ID_PENERBIT}
+              >
+                <td className="px-6 py-4 ">{penerbit.ID_PENERBIT}</td>
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {penerbit.NAMA_PENERBIT}
+                </td>
+                <td className="px-6 py-4">{penerbit.ALAMAT_PENERBIT}</td>
+                <td className="px-6 py-4">{penerbit.KOTA_PENERBIT}</td>
+                <td className="px-6 py-4">{penerbit.TLP}</td>
+                <td className="px-6 py-4">
+                  <ButtonEdit idPenerbit={penerbit.ID_PENERBIT} />
+                  <ButtonDelete idPenerbit={penerbit.ID_PENERBIT} />
+                </td>
+              </tr>
+            ))}
+          </>
+        )}
       </tbody>
     </table>
   );
