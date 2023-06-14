@@ -29,7 +29,7 @@ app.get("/buku", (req, res) => {
 app.get("/buku/:id", (req, res) => {
   const idBuku = req.params.id;
   const sql = `SELECT * FROM buku WHERE ID_BUKU = ? `;
-  db.query(sql,[idBuku],(err, data) => {
+  db.query(sql, [idBuku], (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
   });
@@ -50,6 +50,34 @@ app.post("/buku", (req, res) => {
     if (err) return res.json(err);
     return res.json("Buku berhasil ditambahkan");
   });
+});
+
+app.post("/buku/:id", (req, res) => {
+  const idBuku = req.params.id;
+  const sql =
+    "UPDATE buku SET NAMA_BUKU = ?, KATEGORI_BUKU = ?, HARGA_BUKU = ?, STOK_BUKU = ?, ID_PENERBIT = ? WHERE ID_BUKU = ?";
+  const values = [
+    req.body.namaBuku,
+    req.body.kategoriBuku,
+    req.body.hargaBuku,
+    req.body.stokBuku,
+    req.body.idPenerbit,
+  ];
+  db.query(
+    sql,
+    [
+      req.body.namaBuku,
+      req.body.kategoriBuku,
+      req.body.hargaBuku,
+      req.body.stokBuku,
+      req.body.idPenerbit,
+      idBuku,
+    ],
+    (err, _) => {
+      if (err) return res.json(err);
+      return res.json("Buku berhasil di edit!");
+    }
+  );
 });
 
 app.delete("/buku/:id", (req, res) => {

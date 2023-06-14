@@ -46,24 +46,29 @@ const TableActionBuku = () => {
         </tr>
       </thead>
       <tbody>
-        {buku.map((buku) => (
-          <tr
-            className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-            key={buku.ID_BUKU}>
-            <td className="px-6 py-4 ">{buku.ID_BUKU}</td>
-            <td className="px-6 py-4">{buku.KATEGORI_BUKU}</td>
-            <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              {buku.NAMA_BUKU}
-            </td>
-            <td className="px-6 py-4">{buku.HARGA_BUKU}</td>
-            <td className="px-6 py-4">{buku.STOK_BUKU}</td>
-            <td className="px-6 py-4">{buku.ID_PENERBIT}</td>
-            <td className="px-6 py-4">
-              {/* <ButtonEdit idBuku={buku.ID_BUKU} onClick={toggleModal} /> */}
-              <ButtonDelete idBuku={buku.ID_BUKU} />
-            </td>
-          </tr>
-        ))}
+        {buku.length > 0 && (
+          <>
+            {buku.map((buku) => (
+              <tr
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                key={buku.ID_BUKU}
+              >
+                <td className="px-6 py-4 ">{buku.ID_BUKU}</td>
+                <td className="px-6 py-4">{buku.KATEGORI_BUKU}</td>
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {buku.NAMA_BUKU}
+                </td>
+                <td className="px-6 py-4">{buku.HARGA_BUKU}</td>
+                <td className="px-6 py-4">{buku.STOK_BUKU}</td>
+                <td className="px-6 py-4">{buku.ID_PENERBIT}</td>
+                <td className="px-6 py-4">
+                  <ButtonEdit idBuku={buku.ID_BUKU} />
+                  <ButtonDelete idBuku={buku.ID_BUKU} />
+                </td>
+              </tr>
+            ))}
+          </>
+        )}
       </tbody>
     </table>
   );
