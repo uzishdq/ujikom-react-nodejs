@@ -32,6 +32,7 @@ const TambahPenerbit = () => {
             ID PENERBIT
           </span>
           <input
+            name="idPenerbit"
             className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="SP01"
             type="text"
@@ -43,6 +44,7 @@ const TambahPenerbit = () => {
             NAMA PENERBIT
           </span>
           <input
+            name="namaPenerbit"
             className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="Penerbit Informatika"
             type="text"
@@ -54,6 +56,7 @@ const TambahPenerbit = () => {
             ALAMAT PENERBIT
           </span>
           <input
+            name="alamatPenerbit"
             className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="jl.Buahbatu no.121"
             type="text"
@@ -65,6 +68,7 @@ const TambahPenerbit = () => {
             KOTA PENERBIT
           </span>
           <input
+            name="kotaPenerbit"
             className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="Bandung"
             type="text"
@@ -76,6 +80,7 @@ const TambahPenerbit = () => {
             NO TELEPON
           </span>
           <input
+            name="tlp"
             className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="081-***-**"
             maxLength="11"
